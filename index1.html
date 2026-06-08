@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabir Tikka | BBQ & Fast Food - ESTD 1982</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="icon" type="image/jpeg" href="sklogo.jpg">
+<link rel="shortcut icon" type="image/jpeg" href="sklogo.jpg">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #A31515;
+            --secondary: #111111;
+            --accent: #D4A017;
+            --light-bg: #F5F5F5;
+            --white: #FFFFFF;
+            --dark: #111111;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--secondary);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .section-padding { padding: 80px 0; }
+        .bg-light { background: var(--light-bg); }
+
+        /* Navbar */
+        .navbar {
+            background: var(--white);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            padding: 15px 0;
+        }
+        .brand-logo { 
+            width: 50px; 
+            height: 50px; 
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 10px; 
+        }
+        .brand-name { 
+            font-weight: 800; 
+            color: var(--primary); 
+            font-size: 1.5rem; 
+        }
+        .nav-link { 
+            font-weight: 500; 
+            color: var(--secondary); 
+            margin: 0 10px; 
+            transition: 0.3s; 
+        }
+        .nav-link:hover, .nav-link.active { color: var(--primary); }
+
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1600&h=900&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .hero-logo { 
+            width: 120px; 
+            height: 120px;
+            border-radius: 50%; 
+            margin-bottom: 20px; 
+            border: 3px solid var(--accent);
+            object-fit: cover;
+            background: white;
+            padding: 5px;
+        }
+        .hero-title { 
+            font-size: 4rem; 
+            font-weight: 900; 
+            letter-spacing: 3px;
+            color: white;
+        }
+        .hero-subtitle { 
+            font-size: 1.5rem; 
+            letter-spacing: 2px;
+            color: white;
+        }
+        .hero-since { 
+            font-size: 1.2rem; 
+            margin: 15px 0;
+            color: var(--accent);
+        }
+
+        /* Buttons */
+        .btn-primary { 
+            background: var(--primary); 
+            border: none; 
+            padding: 12px 30px; 
+            font-weight: 600; 
+            transition: 0.3s; 
+        }
+        .btn-primary:hover { 
+            background: #7a0e0e; 
+            transform: translateY(-3px); 
+        }
+        .btn-whatsapp { 
+            background: #25D366; 
+            color: white; 
+            border: none; 
+        }
+        .btn-whatsapp:hover { 
+            background: #128C7E; 
+            color: white; 
+            transform: translateY(-3px); 
+        }
+        .btn-outline-primary { 
+            border: 2px solid var(--primary); 
+            color: var(--primary); 
+            background: transparent;
+            padding: 10px 25px;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+        .btn-outline-primary:hover { 
+            background: var(--primary); 
+            color: white; 
+        }
+
+        /* Section Header */
+        .section-header {
+            margin-bottom: 50px;
+        }
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        .section-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary);
+        }
+        .section-header p {
+            color: #666;
+            margin-top: 15px;
+        }
+
+        /* Category Cards */
+        .category-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .category-card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15); 
+        }
+        .category-card i { 
+            font-size: 3rem; 
+            color: var(--primary); 
+            margin-bottom: 15px; 
+        }
+        .category-card h4 { 
+            font-size: 1.2rem; 
+            margin-bottom: 0; 
+        }
+
+        /* Food Card */
+        .food-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+            height: 100%;
+        }
+        .food-card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15); 
+        }
+        .food-img { 
+            position: relative; 
+            overflow: hidden; 
+            height: 220px; 
+        }
+        .food-img img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: 0.5s; 
+        }
+        .food-card:hover .food-img img { 
+            transform: scale(1.1); 
+        }
+        .overlay {
+            position: absolute;
+            bottom: -60px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            transition: 0.3s;
+            padding: 15px;
+            background: rgba(0,0,0,0.8);
+        }
+        .food-card:hover .overlay { 
+            bottom: 0; 
+        }
+        .food-info { 
+            padding: 20px; 
+        }
+        .food-info h3 { 
+            font-size: 1.3rem; 
+            margin-bottom: 5px; 
+        }
+        .price { 
+            color: var(--primary); 
+            font-weight: 700; 
+            font-size: 1.2rem; 
+        }
+
+        /* Feature Cards */
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            height: 100%;
+        }
+        .feature-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        .feature-card i { 
+            font-size: 3rem; 
+            color: var(--accent); 
+            margin-bottom: 15px; 
+        }
+        .feature-card h4 {
+            margin-bottom: 10px;
+        }
+        .feature-card p {
+            color: #666;
+        }
+
+        /* Reviews Slider */
+        .review-card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+            margin: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        .stars { 
+            color: #FFD700; 
+            margin-bottom: 15px; 
+            font-size: 1.2rem;
+        }
+        .review-card p {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        .review-card h5 {
+            color: var(--primary);
+            margin-bottom: 0;
+        }
+
+        /* Gallery Preview */
+        .gallery-preview-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .gallery-preview-img:hover { 
+            transform: scale(1.03); 
+            opacity: 0.9;
+        }
+
+        /* CTA WhatsApp */
+        .cta-whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            text-align: center;
+        }
+        .cta-icon { 
+            font-size: 4rem; 
+            margin-bottom: 20px; 
+        }
+        .cta-whatsapp h2 {
+            color: white;
+            margin-bottom: 15px;
+        }
+        .cta-whatsapp p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--secondary);
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+        .footer-logo { 
+            width: 80px; 
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px; 
+        }
+        .footer h4 { 
+            color: white; 
+            margin-bottom: 20px; 
+            font-size: 1.2rem;
+        }
+        .footer ul { 
+            list-style: none; 
+            padding: 0; 
+        }
+        .footer ul li { 
+            margin-bottom: 10px; 
+        }
+        .footer ul li a { 
+            color: #ccc; 
+            text-decoration: none; 
+            transition: 0.3s; 
+        }
+        .footer ul li a:hover { 
+            color: var(--primary); 
+            padding-left: 5px; 
+        }
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            color: white;
+            transition: 0.3s;
+        }
+        .social-icons a:hover { 
+            background: var(--primary); 
+            transform: translateY(-3px); 
+        }
+        .footer-bottom { 
+            text-align: center; 
+            padding-top: 30px; 
+            margin-top: 30px; 
+            border-top: 1px solid rgba(255,255,255,0.1); 
+        }
+
+        /* Floating WhatsApp */
+        .floating-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            z-index: 1000;
+            text-decoration: none;
+        }
+        .floating-wa:hover { 
+            transform: scale(1.1); 
+            background: #128C7E; 
+            color: white; 
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: var(--primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: none;
+            transition: 0.3s;
+            z-index: 1000;
+        }
+        .back-to-top:hover { 
+            background: #7a0e0e; 
+            transform: translateY(-5px); 
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .section-padding { padding: 50px 0; }
+            .category-card { padding: 20px; }
+            .floating-wa { width: 50px; height: 50px; font-size: 1.5rem; bottom: 20px; right: 20px; }
+            .back-to-top { bottom: 20px; left: 20px; width: 40px; height: 40px; }
+            .section-header h2 { font-size: 1.8rem; }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        [data-aos] {
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+        [data-aos].aos-animate {
+            opacity: 1;
+            transform: translate(0, 0) scale(1);
+        }
+/* Marquee Container Styles */
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 20px 0;
+}
+
+.marquee-content {
+    display: inline-flex;
+    animation: marquee 20s linear infinite;
+    gap: 20px;
+}
+
+.marquee-content:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Category Card Improved Design for White BG */
+.category-card {
+    text-align: center;
+    padding: 25px 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    min-width: 160px;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(163,21,21,0.15);
+    border-color: rgba(163,21,21,0.2);
+}
+
+.category-card i {
+    font-size: 3rem;
+    color: #A31515;
+    margin-bottom: 15px;
+    transition: all 0.3s;
+}
+
+.category-card:hover i {
+    transform: scale(1.1);
+}
+
+.category-card h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    color: #111111;
+    font-family: 'Poppins', sans-serif;
+}
+
+.category-card p {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 8px;
+    margin-bottom: 0;
+    display: none;
+}
+
+.category-card:hover p {
+    display: block;
+}
+
+/* Swiper Slider Styles */
+.category-slider {
+    padding: 20px 10px;
+}
+
+.category-slider .swiper-slide {
+    width: auto;
+}
+
+.category-slider .swiper-pagination-bullet-active {
+    background: #A31515;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .category-card {
+        padding: 20px 25px;
+        min-width: 130px;
+    }
+    
+    .category-card i {
+        font-size: 2.5rem;
+    }
+    
+    .category-card h4 {
+        font-size: 1rem;
+    }
+}
+/* Deal Cards */
+.deal-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    position: relative;
+}
+
+.deal-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(163,21,21,0.2);
+}
+
+.deal-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #A31515;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-weight: bold;
+    z-index: 1;
+    font-size: 14px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.deal-img {
+    height: 220px;
+    overflow: hidden;
+}
+
+.deal-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.deal-card:hover .deal-img img {
+    transform: scale(1.1);
+}
+
+.deal-info {
+    padding: 20px;
+}
+
+.deal-info h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.deal-info p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.deal-price {
+    margin-bottom: 15px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.9rem;
+    margin-right: 10px;
+}
+
+.new-price {
+    color: #A31515;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Flash Sale Banner */
+.flash-sale-banner {
+    background: linear-gradient(135deg, #A31515, #D4A017);
+    border-radius: 30px;
+    padding: 50px;
+    color: white;
+}
+
+.flash-tag {
+    background: rgba(255,255,255,0.2);
+    padding: 5px 15px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.flash-sale-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.countdown-timer {
+    margin: 25px 0;
+}
+
+.timer .time-box {
+    background: rgba(0,0,0,0.3);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0 5px;
+    min-width: 60px;
+    display: inline-block;
+    text-align: center;
+}
+
+.flash-sale-icon i {
+    font-size: 150px;
+    opacity: 0.5;
+}
+
+/* Daily Special */
+.special-badge {
+    background: #D4A017;
+    color: white;
+    display: inline-block;
+    padding: 5px 20px;
+    border-radius: 30px;
+    margin-bottom: 15px;
+}
+
+.price-box .old {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.price-box .new {
+    color: #A31515;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .deal-card {
+        margin-bottom: 20px;
+    }
+    
+    .flash-sale-banner {
+        padding: 30px;
+    }
+    
+    .flash-sale-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .flash-sale-icon i {
+        font-size: 80px;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+
+<!-- Sticky Navbar -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <div style="display: flex; align-items: center;">
+                <img src="sklogo.jpg" alt="Sabir Tikka Logo" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; margin-right: 10px;">
+                <span class="brand-name">SABIR TIKKA</span>
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Banner Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <img src="sklogo.jpg" alt="Sabir Tikka Logo" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto 20px; border: 3px solid #D4A017;">
+            <h1 class="hero-title">SABIR TIKKA</h1>
+            <p class="hero-subtitle">BBQ & FAST FOOD</p>
+            <p class="hero-since">Since 1982</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary btn-lg">View Menu</a>
+                <a href="#" class="btn btn-whatsapp btn-lg" style="margin-left: 15px;" id="heroWaBtn">Order on WhatsApp</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Categories with Marquee -->
+<section class="categories section-padding">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <h2>Our Specialties</h2>
+            <p>Discover our mouthwatering categories</p>
+        </div>
+    </div>
+    
+    <!-- Marquee Slider -->
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <div class="category-card"><i class="fas fa-drumstick-bite"></i><h4>BBQ</h4></div>
+            <div class="category-card"><i class="fas fa-pizza-slice"></i><h4>Pizza</h4></div>
+            <div class="category-card"><i class="fas fa-hamburger"></i><h4>Burgers</h4></div>
+            <div class="category-card"><i class="fas fa-utensils"></i><h4>Karahi</h4></div>
+            <div class="category-card"><i class="fas fa-box-open"></i><h4>Fast Food</h4></div>
+            <div class="category-card"><i class="fas fa-wine-bottle"></i><h4>Cold Drinks</h4></div>
+            <!-- Duplicate for seamless loop -->
+            <div class="category-card"><i class="fas fa-drumstick-bite"></i><h4>BBQ</h4></div>
+            <div class="category-card"><i class="fas fa-pizza-slice"></i><h4>Pizza</h4></div>
+            <div class="category-card"><i class="fas fa-hamburger"></i><h4>Burgers</h4></div>
+            <div class="category-card"><i class="fas fa-utensils"></i><h4>Karahi</h4></div>
+            <div class="category-card"><i class="fas fa-box-open"></i><h4>Fast Food</h4></div>
+            <div class="category-card"><i class="fas fa-wine-bottle"></i><h4>Cold Drinks</h4></div>
+        </div>
+    </div>
+</section>
+
+<!-- Signature Dishes -->
+<section class="signature-dishes section-padding bg-light" id="menu">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <h2>Signature Dishes</h2>
+            <p>Our most loved specialties</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="food-card"><div class="food-img"><img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=400&h=300&fit=crop" alt="Chicken Tikka"><div class="overlay"><a href="#" class="btn btn-sm btn-whatsapp order-item" data-item="Chicken Tikka" data-price="450">Order on WhatsApp</a></div></div><div class="food-info"><h3>Chicken Tikka</h3><p class="price">PKR 450</p></div></div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="food-card"><div class="food-img"><img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=400&h=300&fit=crop" alt="Malai Boti"><div class="overlay"><a href="#" class="btn btn-sm btn-whatsapp order-item" data-item="Malai Boti" data-price="500">Order on WhatsApp</a></div></div><div class="food-info"><h3>Malai Boti</h3><p class="price">PKR 500</p></div></div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="food-card"><div class="food-img"><img src="https://images.unsplash.com/photo-1545247181-516773cae754?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=400&h=300&fit=crop" alt="Chicken Karahi"><div class="overlay"><a href="#" class="btn btn-sm btn-whatsapp order-item" data-item="Chicken Karahi" data-price="1200">Order on WhatsApp</a></div></div><div class="food-info"><h3>Chicken Karahi</h3><p class="price">PKR 1200</p></div></div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="food-card"><div class="food-img"><img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=400&h=300&fit=crop" alt="BBQ Pizza"><div class="overlay"><a href="#" class="btn btn-sm btn-whatsapp order-item" data-item="BBQ Pizza" data-price="800">Order on WhatsApp</a></div></div><div class="food-info"><h3>BBQ Pizza</h3><p class="price">PKR 800</p></div></div>
+            </div>
+            <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="food-card"><div class="food-img"><img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=400&h=300&fit=crop" alt="Chicken Tikka"><div class="overlay"><a href="#" class="btn btn-sm btn-whatsapp order-item" data-item="Chicken Tikka" data-price="450">Order on WhatsApp</a></div></div><div class="food-info"><h3>Chicken Tikka</h3><p class="price">PKR 450</p></div></div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="food-card"><div class="food-img"><img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=400&h=300&fit=crop" alt="Malai Boti"><div class="overlay"><a href="#" class="btn btn-sm btn-whatsapp order-item" data-item="Malai Boti" data-price="500">Order on WhatsApp</a></div></div><div class="food-info"><h3>Malai Boti</h3><p class="price">PKR 500</p></div></div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="food-card"><div class="food-img"><img src="https://images.unsplash.com/photo-1545247181-516773cae754?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=400&h=300&fit=crop" alt="Chicken Karahi"><div class="overlay"><a href="#" class="btn btn-sm btn-whatsapp order-item" data-item="Chicken Karahi" data-price="1200">Order on WhatsApp</a></div></div><div class="food-info"><h3>Chicken Karahi</h3><p class="price">PKR 1200</p></div></div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="food-card"><div class="food-img"><img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=400&h=300&fit=crop" alt="BBQ Pizza"><div class="overlay"><a href="#" class="btn btn-sm btn-whatsapp order-item" data-item="BBQ Pizza" data-price="800">Order on WhatsApp</a></div></div><div class="food-info"><h3>BBQ Pizza</h3><p class="price">PKR 800</p></div></div>
+            </div>
+            <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="food-card"><div class="food-img"><img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=400&h=300&fit=crop" alt="Chicken Tikka"><div class="overlay"><a href="#" class="btn btn-sm btn-whatsapp order-item" data-item="Chicken Tikka" data-price="450">Order on WhatsApp</a></div></div><div class="food-info"><h3>Chicken Tikka</h3><p class="price">PKR 450</p></div></div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="food-card"><div class="food-img"><img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=400&h=300&fit=crop" alt="Malai Boti"><div class="overlay"><a href="#" class="btn btn-sm btn-whatsapp order-item" data-item="Malai Boti" data-price="500">Order on WhatsApp</a></div></div><div class="food-info"><h3>Malai Boti</h3><p class="price">PKR 500</p></div></div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="food-card"><div class="food-img"><img src="https://images.unsplash.com/photo-1545247181-516773cae754?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=400&h=300&fit=crop" alt="Chicken Karahi"><div class="overlay"><a href="#" class="btn btn-sm btn-whatsapp order-item" data-item="Chicken Karahi" data-price="1200">Order on WhatsApp</a></div></div><div class="food-info"><h3>Chicken Karahi</h3><p class="price">PKR 1200</p></div></div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="food-card"><div class="food-img"><img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=400&h=300&fit=crop" alt="BBQ Pizza"><div class="overlay"><a href="#" class="btn btn-sm btn-whatsapp order-item" data-item="BBQ Pizza" data-price="800">Order on WhatsApp</a></div></div><div class="food-info"><h3>BBQ Pizza</h3><p class="price">PKR 800</p></div></div>
+            </div>
+            <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="food-card"><div class="food-img"><img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=400&h=300&fit=crop" alt="Chicken Tikka"><div class="overlay"><a href="#" class="btn btn-sm btn-whatsapp order-item" data-item="Chicken Tikka" data-price="450">Order on WhatsApp</a></div></div><div class="food-info"><h3>Chicken Tikka</h3><p class="price">PKR 450</p></div></div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="food-card"><div class="food-img"><img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=400&h=300&fit=crop" alt="Malai Boti"><div class="overlay"><a href="#" class="btn btn-sm btn-whatsapp order-item" data-item="Malai Boti" data-price="500">Order on WhatsApp</a></div></div><div class="food-info"><h3>Malai Boti</h3><p class="price">PKR 500</p></div></div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="food-card"><div class="food-img"><img src="https://images.unsplash.com/photo-1545247181-516773cae754?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=400&h=300&fit=crop" alt="Chicken Karahi"><div class="overlay"><a href="#" class="btn btn-sm btn-whatsapp order-item" data-item="Chicken Karahi" data-price="1200">Order on WhatsApp</a></div></div><div class="food-info"><h3>Chicken Karahi</h3><p class="price">PKR 1200</p></div></div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="food-card"><div class="food-img"><img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=400&h=300&fit=crop" alt="BBQ Pizza"><div class="overlay"><a href="#" class="btn btn-sm btn-whatsapp order-item" data-item="BBQ Pizza" data-price="800">Order on WhatsApp</a></div></div><div class="food-info"><h3>BBQ Pizza</h3><p class="price">PKR 800</p></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Featured Deals & Offers Section -->
+<section class="deals-section section-padding">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <h2>Special Deals</h2>
+            <p>Limited time offers - Order now!</p>
+        </div>
+        <div class="row g-4">
+            <!-- Deal 1 -->
+            <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="0">
+                <div class="deal-card">
+                    <div class="deal-badge">-20% OFF</div>
+                    <div class="deal-img">
+                        <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=400&h=300&fit=crop" alt="BBQ Combo">
+                    </div>
+                    <div class="deal-info">
+                        <h3>BBQ Family Combo</h3>
+                        <p>Chicken Tikka + Malai Boti + Seekh Kabab + Fries + Cold Drink</p>
+                        <div class="deal-price">
+                            <span class="old-price">PKR 2500</span>
+                            <span class="new-price">PKR 2000</span>
+                        </div>
+                        <a href="#" class="btn btn-whatsapp order-item" data-item="BBQ Family Combo" data-price="2000">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Deal 2 -->
+            <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="100">
+                <div class="deal-card">
+                    <div class="deal-badge">-15% OFF</div>
+                    <div class="deal-img">
+                        <img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=400&h=300&fit=crop" alt="Pizza Deal">
+                    </div>
+                    <div class="deal-info">
+                        <h3>Pizza Lovers Deal</h3>
+                        <p>Large Pizza (Any Flavor) + 2 Cold Drinks + Garlic Bread</p>
+                        <div class="deal-price">
+                            <span class="old-price">PKR 1800</span>
+                            <span class="new-price">PKR 1530</span>
+                        </div>
+                        <a href="#" class="btn btn-whatsapp order-item" data-item="Pizza Lovers Deal" data-price="1530">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Deal 3 -->
+            <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="200">
+                <div class="deal-card">
+                    <div class="deal-badge">-25% OFF</div>
+                    <div class="deal-img">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop" alt="Burger Deal">
+                    </div>
+                    <div class="deal-info">
+                        <h3>Burger Feast</h3>
+                        <p>2 Zinger Burgers + 2 Fries + 2 Cold Drinks</p>
+                        <div class="deal-price">
+                            <span class="old-price">PKR 1200</span>
+                            <span class="new-price">PKR 900</span>
+                        </div>
+                        <a href="#" class="btn btn-whatsapp order-item" data-item="Burger Feast" data-price="900">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Flash Sale Banner -->
+<section class="flash-sale section-padding">
+    <div class="container">
+        <div class="flash-sale-banner" data-aos="zoom-in">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="flash-sale-content">
+                        <span class="flash-tag">🔥 FLASH SALE 🔥</span>
+                        <h2>Get 30% OFF on All BBQ Items</h2>
+                        <p>Use code: <strong>SABIR30</strong> | Limited time offer</p>
+                        <div class="countdown-timer">
+                            <span>Offer ends in:</span>
+                            <div class="timer" id="timer">
+                                <span class="time-box">00 <small>Days</small></span> :
+                                <span class="time-box">00 <small>Hrs</small></span> :
+                                <span class="time-box">00 <small>Mins</small></span> :
+                                <span class="time-box">00 <small>Secs</small></span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-primary btn-lg order-wa">Order Now →</a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="flash-sale-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Today's Special -->
+<section class="daily-special section-padding bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6" data-aos="fade-right">
+                <div class="special-badge">⭐ Today's Special ⭐</div>
+                <h2>Chicken Karahi</h2>
+                <p>With free naan + salad + cold drink</p>
+                <div class="price-box">
+                    <span class="old">PKR 1500</span>
+                    <span class="new">PKR 1200</span>
+                </div>
+                <a href="#" class="btn btn-whatsapp order-item mt-3" data-item="Today's Special - Chicken Karahi" data-price="1200">
+                    <i class="fab fa-whatsapp"></i> Order Now
+                </a>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <img src="https://images.unsplash.com/photo-1603496987351-f84a3ba5ec85?q=80&w=876&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop" alt="Special" class="img-fluid rounded" style="border-radius: 20px;">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Why Choose Us -->
+<section class="why-choose section-padding">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <h2>Why Choose Us</h2>
+            <p>What makes us special</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6"><div class="feature-card"><i class="fas fa-leaf"></i><h4>Fresh Ingredients</h4><p>100% fresh & quality ingredients</p></div></div>
+            <div class="col-lg-3 col-md-6"><div class="feature-card"><i class="fas fa-fire"></i><h4>Authentic Taste</h4><p>Traditional recipes since 1982</p></div></div>
+            <div class="col-lg-3 col-md-6"><div class="feature-card"><i class="fas fa-motorcycle"></i><h4>Fast Service</h4><p>Quick delivery & takeaway</p></div></div>
+            <div class="col-lg-3 col-md-6"><div class="feature-card"><i class="fas fa-users"></i><h4>Family Environment</h4><p>Perfect for family dining</p></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- Customer Reviews -->
+<section class="reviews section-padding bg-light">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <h2>Customer Reviews</h2>
+            <p>What our customers say</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="review-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Best BBQ in town! Amazing taste and great service."</p><h5>Ahmed Raza</h5></div>
+            </div>
+            <div class="col-md-4">
+                <div class="review-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Malai Boti is out of this world! Highly recommended."</p><h5>Sana Khan</h5></div>
+            </div>
+            <div class="col-md-4">
+                <div class="review-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div><p>"Great service and delicious food. Family friendly environment."</p><h5>Bilal Ahmed</h5></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Preview -->
+<section class="gallery-preview section-padding" id="gallery">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <h2>Gallery Preview</h2>
+            <p>Take a glimpse of our delicious offerings</p>
+        </div>
+        <div class="row g-3">
+            <div class="col-lg-3 col-md-6"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=300&fit=crop" class="gallery-preview-img" alt="Food"></div>
+            <div class="col-lg-3 col-md-6"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=300&fit=crop" class="gallery-preview-img" alt="Pizza"></div>
+            <div class="col-lg-3 col-md-6"><img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=400&h=300&fit=crop" class="gallery-preview-img" alt="Burger"></div>
+            <div class="col-lg-3 col-md-6"><img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=400&h=300&fit=crop" class="gallery-preview-img" alt="Karahi"></div>
+        </div>
+       
+    </div>
+</section>
+
+<!-- Call to Action - WhatsApp -->
+<section class="cta-whatsapp section-padding">
+    <div class="container text-center">
+        <i class="fab fa-whatsapp cta-icon"></i>
+        <h2>Ready To Order?</h2>
+        <p>Get your favorite food delivered to your doorstep</p>
+        <a href="#" class="btn btn-light btn-lg" id="ctaWaBtn" style="color: #25D366; font-weight: 600;">Order Now On WhatsApp</a>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about-story section-padding bg-light" id="about">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <h2>About Us</h2>
+            <p>Our story & mission</p>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600&h=400&fit=crop" alt="Restaurant" class="img-fluid rounded" style="width: 100%;">
+            </div>
+            <div class="col-lg-6">
+                <h3>Our Story</h3>
+                <p>Established in 1982, SABIR TIKKA has been serving the finest BBQ and Fast Food in Hyderabad for over four decades. What started as a small family-run dhaba has now become one of the most trusted names in the city's food scene.</p>
+                <p>Our secret lies in our authentic recipes passed down through generations, using only the freshest ingredients and traditional cooking methods.</p>
+                <div class="row mt-4">
+                    <div class="col-6">
+                        <div style="text-align: center; padding: 15px; background: white; border-radius: 12px;">
+                            <i class="fas fa-bullseye" style="font-size: 2rem; color: var(--accent);"></i>
+                            <h4 style="margin-top: 10px;">Our Mission</h4>
+                            <p>Quality food with authentic taste</p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div style="text-align: center; padding: 15px; background: white; border-radius: 12px;">
+                            <i class="fas fa-eye" style="font-size: 2rem; color: var(--accent);"></i>
+                            <h4 style="margin-top: 10px;">Our Vision</h4>
+                            <p>Hyderabad's most trusted restaurant</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section section-padding" id="contact">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <h2>Contact Us</h2>
+            <p>Get in touch with us</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h4>Call Us</h4>
+                    <p>0331 8252017</p>
+                    <a href="tel:0331 8252017" class="btn btn-outline-primary">Call Now</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="fab fa-whatsapp"></i>
+                    <h4>WhatsApp</h4>
+                    <p>93113301095</p>
+                    <a href="#" class="btn btn-success wa-contact" style="background: #25D366;">WhatsApp Now</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Address</h4>
+                    <p>
+Sabir Tikka Latifabad unit no 11 near pso Petrol pump Hyderabad , Hyderabad, Pakistan, 7100</p>
+                    <a href="#" class="btn btn-outline-primary get-directions">Get Directions</a>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="map-container" style="border-radius: 16px; overflow: hidden;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3605.390074689601!2d68.35420911035375!3d25.3582400775142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x394c7152707551db%3A0x517396a1841cdf30!2sSABIR%20TIKKA!5e0!3m2!1sen!2s!4v1780918260531!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div style="width: 80px; height: 80px; background: #A31515; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; border: 2px solid #D4A017;">
+    <img src="sklogo.jpg" alt="Sabir Tikka Logo" style="width: 75px; height: 75px; border-radius: 50%; object-fit: cover;">
+</div>
+                <p>SABIR TIKKA - Serving authentic BBQ & Fast Food since 1982. Quality taste, happy faces.</p>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4>Opening Hours</h4>
+                <p><strong>Monday - Sunday</strong><br>12 PM – 12 AM</p>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4>Contact</h4>
+                <p><i class="fas fa-phone"></i> 0331 8252017<br>
+                <i class="fab fa-whatsapp"></i> 0331 8252017<br>
+                <i class="fas fa-map-marker-alt"></i> Hyderabad, Pakistan</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/p/Sabir-TIkka-BBQ-Fastfood-61568496727904/"><i class="fab fa-facebook"></i></a>
+                    <a href="mailto:razamalik19900@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.tiktok.com/@sabirtikka?_r=1&_t=ZS-972TYPV9O0j"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://wa.me/923113301095" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 SABIR TIKKA. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating WhatsApp Button -->
+<a href="#" class="floating-wa" id="floatingWaBtn">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Back to Top Button -->
+<button id="backToTop" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+    // Initialize AOS
+    AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
+    });
+
+    // WhatsApp Configuration
+    const whatsappNumber = '923113301095'; // Replace with your WhatsApp number (without +)
+    
+    // Function to open WhatsApp
+    function openWhatsApp(itemName = '', itemPrice = '') {
+        let message = `Assalam O Alaikum,%0A%0AI want to order:%0A`;
+        if (itemName) message += `Item: ${itemName}%0A`;
+        if (itemPrice) message += `Price: PKR ${itemPrice}%0A`;
+        message += `%0AName: %0AAddress: %0A`;
+        window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+    }
+
+    // Add event listeners to all order buttons
+    document.querySelectorAll('.order-item').forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const itemName = button.getAttribute('data-item') || '';
+            const itemPrice = button.getAttribute('data-price') || '';
+            openWhatsApp(itemName, itemPrice);
+        });
+    });
+
+    // Hero button
+    const heroBtn = document.getElementById('heroWaBtn');
+    if (heroBtn) {
+        heroBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openWhatsApp();
+        });
+    }
+
+    // CTA button
+    const ctaBtn = document.getElementById('ctaWaBtn');
+    if (ctaBtn) {
+        ctaBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openWhatsApp();
+        });
+    }
+
+    // Floating button
+    const floatingBtn = document.getElementById('floatingWaBtn');
+    if (floatingBtn) {
+        floatingBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openWhatsApp();
+        });
+    }
+
+    // Contact section WhatsApp button
+    document.querySelectorAll('.wa-contact').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openWhatsApp();
+        });
+    });
+
+    // Back to Top Button
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTop.style.display = 'block';
+        } else {
+            backToTop.style.display = 'none';
+        }
+    });
+    
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Sticky Navbar Effect
+    window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 100) {
+            navbar.style.padding = '5px 0';
+        } else {
+            navbar.style.padding = '15px 0';
+        }
+    });
+
+    // Get Directions
+    const directionsBtn = document.querySelector('.get-directions');
+    if (directionsBtn) {
+        directionsBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const address = 'Main Auto Bahn Road, Near City Hospital, Hyderabad, Pakistan';
+            window.open(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`, '_blank');
+        });
+    }
+
+    // Countdown Timer for Flash Sale
+function startCountdown() {
+    const targetDate = new Date();
+    targetDate.setHours(targetDate.getHours() + 48); // 48 hours from now
+    
+    const timer = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+        
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        document.getElementById("timer").innerHTML = `
+            <span class="time-box">${days} <small>Days</small></span> :
+            <span class="time-box">${hours} <small>Hrs</small></span> :
+            <span class="time-box">${minutes} <small>Mins</small></span> :
+            <span class="time-box">${seconds} <small>Secs</small></span>
+        `;
+        
+        if (distance < 0) {
+            clearInterval(timer);
+            document.getElementById("timer").innerHTML = "Offer Expired!";
+        }
+    }, 1000);
+}
+
+// Call function if timer exists
+if(document.getElementById("timer")) {
+    startCountdown();
+}
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId !== '#' && targetId !== '') {
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
